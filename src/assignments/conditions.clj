@@ -1,11 +1,13 @@
+
 (ns assignments.conditions)
 
 (defn safe-divide
   "Returns the result of x/y unless y is 0. Returns nil when y is 0"
   {:level        :easy
    :use          '[when-not zero?]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (when-not (zero? y) (/ x y)))
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
