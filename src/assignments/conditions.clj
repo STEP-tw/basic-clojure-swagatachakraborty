@@ -13,8 +13,9 @@
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
   {:level        :easy
    :use          '[if-not zero?]
-   :implemented? false}
-  [x y])
+   :implemented? true}
+  [x y]
+  (if-not (zero? y) (/ x y) :infinite))
 
 (defn harishchandra
   "Only returns truthy values as themselves.
