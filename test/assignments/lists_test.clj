@@ -9,4 +9,6 @@
     (testing "inc with single list"
       (is (= '(2 3 4) (map' inc '(1 2 3)))))
     (testing "first with single list of lists"
-      (is (= '(1 4) (map' first '([1 2 3] [4 5 7])))))))
+      (is (= '(1 4) (map' first '([1 2 3] [4 5 7])))))
+    (testing "+ with multiple lists"
+      (is (= '(5 7 9) (map' + [1 2 3] [4 5 6]))))))
