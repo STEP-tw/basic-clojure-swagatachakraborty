@@ -37,3 +37,9 @@
     (is (= :ashwathama (yudishtira false))))
   (testing "should return :ashwathama for :nil"
     (is (= :ashwathama (yudishtira nil)))))
+
+(deftest first-duplicate
+  (testing "should return [1 1 2] for [1 2]"
+    (is (= [1 1 2] (duplicate-first [1 2]))))
+  (testing "should return nil for []"
+    (is (= nil (duplicate-first [])))))
