@@ -43,3 +43,13 @@
     (is (= [1 1 2] (duplicate-first [1 2]))))
   (testing "should return nil for []"
     (is (= nil (duplicate-first [])))))
+
+(deftest five.-someone
+  (testing "should return :chetan-bhagat for [:x 2, :y 5]"
+    (is (= :chetan-bhagat (five-point-someone 2 5))))
+  (testing "should return :satan-bhagat for [:x 5, :y 0]"
+    (is (= :satan-bhagat (five-point-someone 5 0))))
+  (testing "should return :greece for [:x 6, :y 0]"
+    (is (= :greece (five-point-someone 6 0))))
+  (testing "should return :universe for [:x 2, :y 4]"
+    (is (= :universe (five-point-someone 2 4)))))
