@@ -17,11 +17,23 @@
 (deftest raja-harishchandra
   (testing "should return true for true"
     (is (true? (harishchandra true))))
-  (testing "should return true for 2"
+  (testing "should return 2 for 2"
     (is (= 2 (harishchandra 2))))
-  (testing "should return true for []"
+  (testing "should return [] for []"
     (is (= [] (harishchandra []))))
-  (testing "should return false for false"
+  (testing "should return nil for false"
     (is (= nil (harishchandra false))))
-  (testing "should return false for nil"
+  (testing "should return nil for nil"
     (is (= nil (harishchandra nil)))))
+
+(deftest yudishtira-bachan
+  (testing "should return true for true"
+    (is (true? (yudishtira true))))
+  (testing "should return 2 for 2"
+    (is (= 2 (yudishtira 2))))
+  (testing "should return [] for []"
+    (is (= [] (yudishtira []))))
+  (testing "should return :ashwathama for false"
+    (is (= :ashwathama (yudishtira false))))
+  (testing "should return :ashwathama for :nil"
+    (is (= :ashwathama (yudishtira nil)))))
