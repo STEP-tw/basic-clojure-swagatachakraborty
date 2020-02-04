@@ -65,3 +65,13 @@
     (is (= :tuntun (conditions-apply [:x 2 :y 4]))))
   (testing "should return :tuntun for [0 2 3 1]"
     (is (= :tuntun (conditions-apply [0 2 3 1])))))
+
+(deftest repeat-&-truncate
+  (testing "should return [0 1 2 0] for ([0 1 2] true true 4)"
+    (is (= [0 1 2 0] (repeat-and-truncate [0 1 2] true true 4))))
+  (testing "should return [0 1 2 0 1 2] for ([0 1 2] true false 4"
+    (is (= [0 1 2 0 1 2] (repeat-and-truncate [0 1 2] true false 4))))
+  (testing "should return [0 1] for ([0 1 2] false true 2"
+    (is (= [0 1] (repeat-and-truncate [0 1 2] false true 2))))
+  (testing "should return [0 1 2] for ([0 1 2] false false 2"
+    (is (= [0 1 2 ] (repeat-and-truncate [0 1 2] false false 4)))))
