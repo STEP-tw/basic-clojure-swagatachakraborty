@@ -75,3 +75,11 @@
     (is (= [0 1] (repeat-and-truncate [0 1 2] false true 2))))
   (testing "should return [0 1 2] for ([0 1 2] false false 2"
     (is (= [0 1 2 ] (repeat-and-truncate [0 1 2] false false 4)))))
+
+(deftest order-in-the-words
+  (testing "should return [:x-greater-than-y :y-greater-than-z] for [4 3 2])"
+    (is (= [:x-greater-than-y :y-greater-than-z] (order-in-words 4 3 2))))
+  (testing "should return [:x-greater-than-y :z-greater-than-x] for [4 3 5])"
+    (is (= [:x-greater-than-y :z-greater-than-x] (order-in-words 4 3 5))))
+  (testing "should return [:z-greater-than-x] for [2 3 4])"
+    (is (= [:z-greater-than-x] (order-in-words 2 3 4)))))
