@@ -124,7 +124,7 @@
   (case zero-like-value
     0 :zero
     [] :empty
-    `() :empty
+    () :empty
     #{} :empty-set
     {} :empty-map
     "" :empty-string
