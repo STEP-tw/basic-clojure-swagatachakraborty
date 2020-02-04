@@ -74,7 +74,7 @@
   (testing "should return [0 1] for ([0 1 2] false true 2"
     (is (= [0 1] (repeat-and-truncate [0 1 2] false true 2))))
   (testing "should return [0 1 2] for ([0 1 2] false false 2"
-    (is (= [0 1 2 ] (repeat-and-truncate [0 1 2] false false 4)))))
+    (is (= [0 1 2] (repeat-and-truncate [0 1 2] false false 4)))))
 
 (deftest order-in-the-words
   (testing "should return [:x-greater-than-y :y-greater-than-z] for [4 3 2])"
@@ -97,3 +97,11 @@
     (is (= :empty-map (zero-aliases {}))))
   (testing "should return :not-zero for 1)"
     (is (= :not-zero (zero-aliases 1)))))
+
+(deftest zero-palindrome
+  (testing "should return (4 3 2 0 2 3 4) for [1 2 3])"
+    (is (= '(4 3 2 0 2 3 4) (zero-separated-palindrome [1 2 3]))))
+  (testing "should return (0) for [])"
+    (is (= '(0) (zero-separated-palindrome []))))
+  (testing "should return (:a 0 :a) for [:a])"
+    (is (= '(:a 0 :a) (zero-separated-palindrome [:a])))))
