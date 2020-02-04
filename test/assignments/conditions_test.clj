@@ -53,3 +53,15 @@
     (is (= :greece (five-point-someone 6 0))))
   (testing "should return :universe for [:x 2, :y 4]"
     (is (= :universe (five-point-someone 2 4)))))
+
+(deftest apply-conditions
+  (testing "should return :wonder-woman for [0 1 2 3]"
+    (is (= :wonder-woman (conditions-apply [0 1 3]))))
+  (testing "should return :durga for [:a :b :c :d]"
+    (is (= :durga (conditions-apply [:a :b :c :d]))))
+  (testing "should return :cleopatra for [[2 3] [4 5]]"
+    (is (= :cleopatra (conditions-apply [[2 3] [4 5]]))))
+  (testing "should return :tuntun for [x 2 y 4]"
+    (is (= :tuntun (conditions-apply [:x 2 :y 4]))))
+  (testing "should return :tuntun for [0 2 3 1]"
+    (is (= :tuntun (conditions-apply [0 2 3 1])))))
