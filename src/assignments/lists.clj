@@ -72,8 +72,13 @@
   {:level        :easy
    :use          '[loop recur]
    :dont-use     '[count]
-   :implemented? false}
-  ([coll]))
+   :implemented? true}
+  ([coll]
+   (loop [count 0
+          c coll]
+     (if (= '() c)
+       count
+       (recur (inc count) (rest c))))))
 
 (defn reverse'
   "Implement your own version of reverse that reverses a coll.
