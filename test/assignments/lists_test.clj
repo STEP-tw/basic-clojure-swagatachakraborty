@@ -17,4 +17,10 @@
     (testing "should return [1 3] for (odd? [1 2 3 4])"
       (is (= [1 3] (filter' odd? [1 2 3 4]))))
     (testing "should return [] for (even? [1 3 5 7])"
-      (is (= '() (filter' even? '(1 3 5 7)))))))
+      (is (= '() (filter' even? '(1 3 5 7))))))
+
+  (testing "reduce"
+    (testing "should return 15 for (+ [1 2 3 4 5])"
+      (is (= 15 (reduce' + [1 2 3 4 5]))))
+    (testing "should return 10 for (+ -5 [1 2 3 4 5])"
+      (is (= 10 (reduce' + -5 '(1 2 3 4 5)))))))
