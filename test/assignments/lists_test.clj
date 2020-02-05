@@ -29,4 +29,10 @@
     (testing "should return 5 for ([1 2 3 4 5])"
       (is (= 5 (count' [1 2 3 4 5]))))
     (testing "should return 0 for ([1 2 3 4 5])"
-      (is (= 0 (count' '()))))))
+      (is (= 0 (count' '())))))
+
+  (testing "reverse'"
+    (testing "should return [5 4 3 2 1] for ([1 2 3 4 5])"
+      (is (= [5 4 3 2 1] (reverse' [1 2 3 4 5]))))
+    (testing "should return [] for ([])"
+      (is (= [] (reverse' '()))))))
