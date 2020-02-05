@@ -41,4 +41,10 @@
     (testing "should return true for (even? [2 4 6])"
       (is (true? (every?' even? [2 4 6]))))
     (testing "should return false for (even? [1 2 3])"
-      (is (false? (every?' even? '(1 2 3)))))))
+      (is (false? (every?' even? '(1 2 3))))))
+
+  (testing "some?'"
+    (testing "should return true for (even? [2 4 6 1])"
+      (is (true? (some?' even? [2 4 6]))))
+    (testing "should return false for (even? [1 3 7])"
+      (is (false? (some?' even? '(1 3 7)))))))
