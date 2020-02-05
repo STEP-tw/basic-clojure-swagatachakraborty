@@ -35,4 +35,10 @@
     (testing "should return [5 4 3 2 1] for ([1 2 3 4 5])"
       (is (= [5 4 3 2 1] (reverse' [1 2 3 4 5]))))
     (testing "should return [] for ([])"
-      (is (= [] (reverse' '()))))))
+      (is (= [] (reverse' '())))))
+
+  (testing "every?'"
+    (testing "should return true for (even? [2 4 6])"
+      (is (true? (every?' even? [2 4 6]))))
+    (testing "should return false for (even? [1 2 3])"
+      (is (false? (every?' even? '(1 2 3)))))))
