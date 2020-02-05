@@ -47,4 +47,10 @@
     (testing "should return true for (even? [2 4 6 1])"
       (is (true? (some?' even? [2 4 6]))))
     (testing "should return false for (even? [1 3 7])"
-      (is (false? (some?' even? '(1 3 7)))))))
+      (is (false? (some?' even? '(1 3 7))))))
+
+  (testing "ascending?"
+    (testing "should return true for (2 4 4 6 9)"
+      (is (true? (ascending? [2 4 4 6 9]))))
+    (testing "should return false for [1 3 7]"
+      (is (false? (ascending? '(1 3 0 7)))))))
