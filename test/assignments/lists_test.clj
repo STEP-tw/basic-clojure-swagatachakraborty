@@ -67,8 +67,12 @@
 
   (testing "max-three-digit-sequence"
     (testing "should return [2 -1 2] for [1 2 -1 2 0]"
-      (is (= '[2 -1 2] (max-three-digit-sequence [1 2 -1 2 0])))))
+      (is (= [2 -1 2] (max-three-digit-sequence [1 2 -1 2 0])))))
 
   (testing "transpose"
     (testing "should return [[:a :c] [:b :d]] for [[:a :b :x] [:c :d :y]]"
-      (is (= '[[:a :c] [:b :d] [:x :y]] (transpose [[:a :b :x] [:c :d :y]]))))))
+      (is (= [[:a :c] [:b :d] [:x :y]] (transpose [[:a :b :x] [:c :d :y]])))))
+
+  (testing "difference"
+    (testing "should return [2 3 4] for [0 1 5] [0 1 2 3 4 5]"
+      (is (= [2 3 4](difference [0 1 5] [0 1 2 3 4 5]))))))
