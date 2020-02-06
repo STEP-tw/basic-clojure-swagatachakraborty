@@ -67,4 +67,8 @@
 
   (testing "max-three-digit-sequence"
     (testing "should return [2 -1 2] for [1 2 -1 2 0]"
-      (is (= '[2 -1 2] (max-three-digit-sequence [1 2 -1 2 0] ))))))
+      (is (= '[2 -1 2] (max-three-digit-sequence [1 2 -1 2 0])))))
+
+  (testing "transpose"
+    (testing "should return [[:a :c] [:b :d]] for [[:a :b :x] [:c :d :y]]"
+      (is (= '[[:a :c] [:b :d] [:x :y]] (transpose [[:a :b :x] [:c :d :y]]))))))
