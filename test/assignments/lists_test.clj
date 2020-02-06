@@ -75,4 +75,8 @@
 
   (testing "difference"
     (testing "should return [2 3 4] for [0 1 5] [0 1 2 3 4 5]"
-      (is (= [2 3 4](difference [0 1 5] [0 1 2 3 4 5]))))))
+      (is (= [2 3 4](difference [0 1 5] [0 1 2 3 4 5])))))
+
+  (testing "union"
+    (testing "should return [2 3 4] for [0 1 5] [0 1 2 3 4 5]"
+      (is (= [0 1 2 3 4 5](union [0 1 5] [0 1 2 3 4 5]))))))
