@@ -59,4 +59,8 @@
     (testing "should return (2 4 6 9) for (2 4 4 6 9)"
       (is (= '(2 4 6 9) (distinct' [2 4 4 6 9]))))
     (testing "should return (1 3 0 7) for [1 3 0 7]"
-      (is (= '(1 3 0 7) (distinct' '(1 3 0 7)))))))
+      (is (= '(1 3 0 7) (distinct' '(1 3 0 7))))))
+
+  (testing "sum-of-adjacent-digits"
+    (testing "should return (6 8 10 15) for (2 4 4 6 9)"
+      (is (= '(6 8 10 15) (sum-of-adjacent-digits [2 4 4 6 9]))))))

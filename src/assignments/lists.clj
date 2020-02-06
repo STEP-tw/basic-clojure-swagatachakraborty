@@ -148,7 +148,6 @@
    :implemented? true}
   [coll]
   (letfn [(get-distinct-element [r c]
-            (println r c (first c) (empty? (filter (set r) [(first c)])))
             (if-let [x (first c)]
               (get-distinct-element
                 (if (empty? (filter (set r) [x])) (conj r x) r)
@@ -174,8 +173,9 @@
   {:level        :medium
    :use          '[map + rest]
    :dont-use     '[loop recur partition]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (map + coll (rest coll)))
 
 (defn max-three-digit-sequence
   "Given a collection of numbers, find a three digit sequence that
