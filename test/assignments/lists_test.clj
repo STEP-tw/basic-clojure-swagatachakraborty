@@ -63,4 +63,8 @@
 
   (testing "sum-of-adjacent-digits"
     (testing "should return (6 8 10 15) for (2 4 4 6 9)"
-      (is (= '(6 8 10 15) (sum-of-adjacent-digits [2 4 4 6 9]))))))
+      (is (= '(6 8 10 15) (sum-of-adjacent-digits [2 4 4 6 9])))))
+
+  (testing "max-three-digit-sequence"
+    (testing "should return [2 -1 2] for [1 2 -1 2 0]"
+      (is (= '[2 -1 2] (max-three-digit-sequence [1 2 -1 2 0] ))))))

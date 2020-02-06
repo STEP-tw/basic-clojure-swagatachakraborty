@@ -185,8 +185,11 @@
   {:level        :medium
    :use          '[map next nnext max-key partial apply + if ->>]
    :dont-use     '[loop recur partition]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (->> coll
+       (#(map list % (next %) (nnext %)))
+       (apply max-key (partial apply +))))
 
 ;; transpose is a def. Not a defn.
 (def
