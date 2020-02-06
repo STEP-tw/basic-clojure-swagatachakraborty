@@ -53,4 +53,10 @@
     (testing "should return true for (2 4 4 6 9)"
       (is (true? (ascending? [2 4 4 6 9]))))
     (testing "should return false for [1 3 7]"
-      (is (false? (ascending? '(1 3 0 7)))))))
+      (is (false? (ascending? '(1 3 0 7))))))
+
+  (testing "distinct'?"
+    (testing "should return (2 4 6 9) for (2 4 4 6 9)"
+      (is (= '(2 4 6 9) (distinct' [2 4 4 6 9]))))
+    (testing "should return (1 3 0 7) for [1 3 0 7]"
+      (is (= '(1 3 0 7) (distinct' '(1 3 0 7)))))))

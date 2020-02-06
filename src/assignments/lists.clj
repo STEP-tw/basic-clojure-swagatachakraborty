@@ -145,8 +145,18 @@
   {:level        :medium
    :use          '[lazy-seq set conj let :optionally letfn]
    :dont-use     '[loop recur distinct]
-   :implemented? false}
-  [coll])
+   :implemented? true}
+  [coll]
+  (letfn [(get-distinct-element [r c]
+            (println r c (first c) (empty? (filter (set r) [(first c)])))
+            (if-let [x (first c)]
+              (get-distinct-element
+                (if (empty? (filter (set r) [x])) (conj r x) r)
+                (rest c))
+              r
+              ))]
+
+    (lazy-seq (get-distinct-element [] coll))))
 
 (defn dedupe'
   "Implement your own lazy sequence version of dedupe which returns
